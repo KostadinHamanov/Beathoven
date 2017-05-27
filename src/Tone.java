@@ -1,11 +1,9 @@
-import java.io.File;
-import java.io.IOException;
-
 import javax.sound.midi.InvalidMidiDataException;
 import javax.sound.midi.MidiSystem;
 import javax.sound.midi.MidiUnavailableException;
 import javax.sound.midi.Sequencer;
-import javax.swing.JFrame;
+import java.io.File;
+import java.io.IOException;
 
 /**
  * Audio tone generator, using the Java sampled sound API.
@@ -13,21 +11,23 @@ import javax.swing.JFrame;
  * @author andrew Thompson
  * @version 2007/12/6
  */
-public class Tone extends JFrame {
+public class Tone {
 
 	/**
 	 * 
 	 */
-	private static final long serialVersionUID = -461906699629673967L;
+
+	public static Sequencer sequencer;
 
 	public static void main(String[] args) {
-		File midiFile = new File("/home/stunji/Downloads/take5.mid");
+		File midiFile = new File("/home/martin/Downloads/www.mid");
 		// Play once
 		try {
-			Sequencer sequencer = MidiSystem.getSequencer();
+			sequencer = MidiSystem.getSequencer();
 			sequencer.setSequence(MidiSystem.getSequence(midiFile));
 			sequencer.open();
 			sequencer.start();
+			sequencer.setMicrosecondPosition(Long.valueOf(args[0]));
 			while (true) {
 				if (sequencer.isRunning()) {
 					try {

@@ -20,26 +20,29 @@ public class MainFrame extends JFrame {
     private static void createAndShowGUI() {
 
         //Create and set up the window.
-        JFrame frame = new JFrame("ButtonDemo");
-        frame.setLayout(new GridLayout(2,3));
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+//        JFrame frame = new JFrame("ButtonDemo");
+//        frame.setLayout(new GridLayout(2,3));
+//        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    	JFrame frame = new JFrame("MainFrame");
+//	    frame.setLayout(new GridLayout(2,3));
+	    frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         //Create and set up the content pane.
-        ButtonDemo newContentPane = new ButtonDemo();
-        newContentPane.setLayout(new GridLayout(1,3));
-        newContentPane.setOpaque(true); //content panes must be opaque
+        ButtonDemo buttonsPanel = new ButtonDemo();
+        buttonsPanel.setLayout(new GridLayout(1,3));
+        buttonsPanel.setOpaque(true); //content panes must be opaque
 //        frame.setContentPane(newContentPane);
 
-        frame.add(newContentPane, BorderLayout.NORTH);
+        frame.add(buttonsPanel, BorderLayout.NORTH);
 //        pane.add(compsToExperiment, BorderLayout.NORTH);
 //        pane.add(new JSeparator(), BorderLayout.CENTER);
 //        pane.add(controls, BorderLayout.SOUTH);
 
-        LabelPanel newContentPane2 = new LabelPanel();
-        newContentPane.setLayout(new GridLayout(1,1));
-        newContentPane2.setOpaque(true); //content panes must be opaque
+        LabelPanel timeLabelPanel = new LabelPanel();
+        timeLabelPanel.setLayout(new GridLayout(1, 1));
+        timeLabelPanel.setOpaque(true); //content panes must be opaque
 //        frame.add(newContentPane2);
-        frame.add(newContentPane, BorderLayout.SOUTH);
+        frame.add(timeLabelPanel, BorderLayout.SOUTH);
 
         //Display the window.
         frame.pack();

@@ -1,12 +1,11 @@
 package org.sort.linear.gui;
 
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-
 import javax.sound.midi.MidiUnavailableException;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
+import javax.swing.event.MenuEvent;
+import javax.swing.event.MenuListener;
 
 import org.sort.linear.sound.SoundParser;
 
@@ -23,21 +22,33 @@ public class MenuBarFactory {
 		shapesMenu.add(triangleeShapeMenuItem);
 		menuBar.add(shapesMenu);
 		menuBar.add(start);
-		start.addActionListener(new ActionListener() {
+		start.addMenuListener(new MenuListener() {
 
 			@Override
-			public void actionPerformed(ActionEvent e) {
+			public void menuSelected(MenuEvent e) {
+				// TODO Auto-generated method stub
 				try {
 					SoundParser.parse(PadsPanel.getButtons());
-				} catch (MidiUnavailableException exception) {
-					// TODO Auto-generated catch block
-					exception.printStackTrace();
-				} catch (InterruptedException exception) {
+				} catch (MidiUnavailableException | InterruptedException exception) {
 					// TODO Auto-generated catch block
 					exception.printStackTrace();
 				}
+
+			}
+
+			@Override
+			public void menuDeselected(MenuEvent e) {
+				// TODO Auto-generated method stub
+
+			}
+
+			@Override
+			public void menuCanceled(MenuEvent e) {
+				// TODO Auto-generated method stub
+
 			}
 		});
+
 		return menuBar;
 	}
 

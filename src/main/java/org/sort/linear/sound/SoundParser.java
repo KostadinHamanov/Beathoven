@@ -1,5 +1,8 @@
 package org.sort.linear.sound;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.sound.midi.MidiChannel;
 import javax.sound.midi.MidiSystem;
 import javax.sound.midi.MidiUnavailableException;
@@ -15,17 +18,24 @@ public class SoundParser {
 	public static void parse(final JToggleButton[][] buttons) throws MidiUnavailableException, InterruptedException {
 		Synthesizer synthesizer = MidiSystem.getSynthesizer();
 		synthesizer.open();
-		MidiChannel midiChannel = synthesizer.getChannels()[0];
+		MidiChannel[] channels = synthesizer.getChannels();
 
-		for (int i = 0; i < buttons.length; i++) {
-			for (int j = 0; i < buttons[i].length; i++) {
+		int index = 0;
+		List<MidiChannel> colChannels = new ArrayList<>();
+		for (int i = 0; i < buttons[0].length; i++) {
+			for (int j = 0; j < buttons.length; j++) {
 				if (buttons[j][i].isSelected()) {
-					midiChannel.noteOn(NOTE_NUMBER, VELOCITY);
+					colChannels.add(channels[index++]);
 				}
-				Thread.sleep(500);
 			}
+			for (MidiChannel midiChannel : colChannels) {
+				midiChannel.noteOn(50, 50);
+			}
+			Thread.sleep(200);
+			colChannels.clear();
+			index = 0;
 		}
-		midiChannel.noteOff(NOTE_NUMBER);
+
 	}
 
 	public static void main(String[] args) {

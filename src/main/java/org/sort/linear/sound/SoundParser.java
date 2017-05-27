@@ -38,7 +38,7 @@ public class SoundParser {
 				colChannels.get(k).programChange(3);
 				colChannels.get(k).noteOn(notes.get(k), 50);
 			}
-			Thread.sleep(170);
+			Thread.sleep(190);
 			colChannels.clear();
 			notes.clear();
 			index = 0;

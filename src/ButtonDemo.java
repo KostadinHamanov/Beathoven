@@ -59,12 +59,13 @@ public class ButtonDemo extends JPanel
         b1.setVerticalTextPosition(AbstractButton.CENTER);
         b1.setHorizontalTextPosition(AbstractButton.LEADING); //aka LEFT, for left-to-right locales
         b1.setMnemonic(KeyEvent.VK_D);
-        b1.setActionCommand("disable");
+        b1.setActionCommand("start");
 
         b2 = new JButton("Stop", middleButtonIcon);
         b2.setVerticalTextPosition(AbstractButton.BOTTOM);
         b2.setHorizontalTextPosition(AbstractButton.CENTER);
         b2.setMnemonic(KeyEvent.VK_M);
+        b2.setActionCommand("Stop");
 
         b3 = new JButton("Pause", rightButtonIcon);
         //Use the default text position of CENTER, TRAILING (RIGHT).
@@ -75,6 +76,7 @@ public class ButtonDemo extends JPanel
         //Listen for actions on buttons 1 and 3.
         b1.addActionListener(this);
         b3.addActionListener(this);
+        b2.addActionListener(this);
 
         //TODO:change
         b1.setToolTipText("Click this button to disable the middle button.");
@@ -88,7 +90,7 @@ public class ButtonDemo extends JPanel
     }
 
     public void actionPerformed(ActionEvent e) {
-        if ("disable".equals(e.getActionCommand())) {
+        if ("start".equals(e.getActionCommand())) {
             b2.setEnabled(false);
             b1.setEnabled(false);
             b3.setEnabled(true);
@@ -108,7 +110,15 @@ public class ButtonDemo extends JPanel
             thread3.start();
 
 
-        } else {
+        } else if ("Stop".equals(e.getActionCommand())){
+            pausedAt = 0;
+            System.out.println("Stopped: " + pausedAt);
+
+            b2.setEnabled(true);
+            b1.setEnabled(true);
+            b3.setEnabled(false);
+
+        }  else{
             b2.setEnabled(true);
             b1.setEnabled(true);
             b3.setEnabled(false);

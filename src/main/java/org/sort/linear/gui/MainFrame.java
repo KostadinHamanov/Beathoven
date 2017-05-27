@@ -1,4 +1,4 @@
-package org.sort.linear;
+package org.sort.linear.gui;
 
 import java.awt.BorderLayout;
 

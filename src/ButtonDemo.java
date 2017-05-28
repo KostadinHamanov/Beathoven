@@ -33,7 +33,6 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
-import java.util.concurrent.TimeUnit;
 
 /* 
  * ButtonDemo.java requires the following files:
@@ -105,11 +104,11 @@ public class ButtonDemo extends JPanel
 
                 Tone.play(pausedAt);
 
-                System.out.println(TimeUnit.SECONDS.convert(System.nanoTime() - start, TimeUnit.NANOSECONDS));
+//                System.out.println(TimeUnit.SECONDS.convert(System.nanoTime() - start, TimeUnit.NANOSECONDS));
 
-                System.out.println(Thread.currentThread().getName() +
-                        "\twith Runnable: Inner class Runnable runs...");
-//                }
+//                System.out.println(Thread.currentThread().getName() +
+//                        "\twith Runnable: Inner class Runnable runs...");
+////                }
             }, "Thread 3");
             thread3.start();
 
@@ -134,7 +133,7 @@ public class ButtonDemo extends JPanel
 
             LabelPanel.lbl.setText("Time: " + String.valueOf(Tone.sequencer.getMicrosecondPosition()));
             MainFrame.progressBarPanel.progressBar.setValue(MainFrame.getLocation(Tone.sequencer.getMicrosecondPosition()));
-            System.out.println(pausedAt);
+            System.out.println("Paused at: " + pausedAt);
 
             Tone.sequencer.stop();
 //            thread3.interrupt();

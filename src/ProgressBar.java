@@ -51,9 +51,9 @@ public class ProgressBar extends JPanel
     public ProgressBar() {
 
         //TODO:fix
-        ImageIcon leftButtonIcon = createImageIcon("images/right.gif");
-        ImageIcon middleButtonIcon = createImageIcon("images/middle.gif");
-        ImageIcon rightButtonIcon = createImageIcon("images/left.gif");
+        ImageIcon leftButtonIcon = new ImageIcon();// createImageIcon("images/right.gif");
+        ImageIcon middleButtonIcon = new ImageIcon();// createImageIcon("images/middle.gif");
+        ImageIcon rightButtonIcon = new ImageIcon();// createImageIcon("images/left.gif");
 
         progressBar = new JProgressBar(0, MainFrame.getLocation(Tone.sequencer.getMicrosecondLength()));
         progressBar.setValue(MainFrame.getLocation(0));

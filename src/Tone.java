@@ -51,6 +51,7 @@ public class Tone {
     }
 
     public static void play(long startAt) {
+        System.out.println("Started at: " + startAt);
         sequencer.start();
         sequencer.setMicrosecondPosition(startAt);
         while (true) {

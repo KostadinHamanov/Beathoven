@@ -101,7 +101,9 @@ public class ButtonDemo extends JPanel
                 // We are doing the same thing as with the MyRunnableImplementation class
 //                for (int i = 0; i < 5; i++) {
                 long start = System.nanoTime();
-                Tone.main(new String[]{String.valueOf(pausedAt)});
+//                Tone.main(new String[]{String.valueOf(pausedAt)});
+
+                Tone.play(pausedAt);
 
                 System.out.println(TimeUnit.SECONDS.convert(System.nanoTime() - start, TimeUnit.NANOSECONDS));
 
@@ -116,7 +118,7 @@ public class ButtonDemo extends JPanel
             pausedAt = 0;
             System.out.println("Stopped: " + pausedAt);
 
-            LabelPanel.lbl.setText("Time: " + String.valueOf(Tone.sequencer.getMicrosecondPosition()));
+            LabelPanel.lbl.setText("Time: " + String.valueOf(pausedAt));
 
             b2.setEnabled(true);
             b1.setEnabled(true);

@@ -22,19 +22,19 @@ public class Tone {
     public static void main(String[] args) {
         // Play once
 
-        load();
+//        load("/home/martin/Downloads/www.mid");
 
-        play(Long.valueOf(args[0]));
-
-        // Close the MidiDevice & free resources
-        sequencer.stop();
-        sequencer.close();
+//        play(Long.valueOf(args[0]));
+//
+//        // Close the MidiDevice & free resources
+//        sequencer.stop();
+//        sequencer.close();
     }
 
 
-    public static void load() {
+    public static void load(String fileName) {
 
-        File midiFile = new File("/home/martin/Downloads/www.mid");
+        File midiFile = new File(fileName);
 
         try {
             sequencer = MidiSystem.getSequencer();

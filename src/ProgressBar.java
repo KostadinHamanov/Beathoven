@@ -32,7 +32,8 @@
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 
 /* 
  * ButtonDemo.java requires the following files:
@@ -41,7 +42,7 @@ import java.awt.event.ActionListener;
  *   images/left.gif
  */
 public class ProgressBar extends JPanel
-        implements ActionListener {
+        implements MouseListener {
     //Where member variables are declared:
     public static JProgressBar progressBar;
 
@@ -60,6 +61,11 @@ public class ProgressBar extends JPanel
 
         progressBar.setLayout(new GridLayout(1, 1));
         progressBar.setOpaque(true); //content panes must be opaque
+
+        progressBar.addMouseListener(this);
+
+
+        add(progressBar);
 //
 //        b1 = new JButton("Start/Continue", leftButtonIcon);
 //        b1.setVerticalTextPosition(AbstractButton.CENTER);
@@ -90,7 +96,6 @@ public class ProgressBar extends JPanel
 //        b3.setToolTipText("Click this button to enable the middle button.");
 
         //Add Components to this container, using the default FlowLayout.
-        add(progressBar);
 //        add(b2);
 //        add(b3);
 
@@ -159,4 +164,29 @@ public class ProgressBar extends JPanel
         }
     }
 
+    @Override
+    public void mouseClicked(MouseEvent mouseEvent) {
+        double newPosition = mouseEvent.getPoint().getX() / progressBar.getSize().getWidth();
+        Tone.sequencer.setMicrosecondPosition(Math.round(newPosition * Tone.sequencer.getMicrosecondLength()));
+    }
+
+    @Override
+    public void mousePressed(MouseEvent mouseEvent) {
+
+    }
+
+    @Override
+    public void mouseReleased(MouseEvent mouseEvent) {
+
+    }
+
+    @Override
+    public void mouseEntered(MouseEvent mouseEvent) {
+
+    }
+
+    @Override
+    public void mouseExited(MouseEvent mouseEvent) {
+
+    }
 }

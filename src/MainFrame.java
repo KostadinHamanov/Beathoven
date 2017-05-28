@@ -7,6 +7,8 @@ import java.awt.*;
 public class MainFrame extends JFrame {
     private JPanel buttonsPanel;
     private JPanel labelPanel;
+    //Where member variables are declared:
+    public static JProgressBar progressBar;
 
     public MainFrame() {
 
@@ -42,7 +44,18 @@ public class MainFrame extends JFrame {
         timeLabelPanel.setLayout(new GridLayout(1, 1));
         timeLabelPanel.setOpaque(true); //content panes must be opaque
 //        frame.add(newContentPane2);
-        frame.add(timeLabelPanel, BorderLayout.SOUTH);
+        frame.add(timeLabelPanel, BorderLayout.CENTER);
+
+        //Where the GUI is constructed:
+//        progressBar = new JProgressBar(0, task.getLengthOfTask());
+        progressBar = new JProgressBar(0, 100);
+        progressBar.setValue(10);
+        progressBar.setStringPainted(true);
+
+        progressBar.setLayout(new GridLayout(1, 1));
+        progressBar.setOpaque(true); //content panes must be opaque
+//        frame.add(newContentPane2);
+        frame.add(progressBar, BorderLayout.SOUTH);
 
         //Display the window.
         frame.pack();

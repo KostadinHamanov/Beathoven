@@ -32,6 +32,7 @@ public class Tone {
 				if (sequencer.isRunning()) {
 					try {
 						Thread.sleep(1000); // Check every second
+						LabelPanel.lbl.setText("Time: " + String.valueOf(Tone.sequencer.getMicrosecondPosition()));
 					} catch (InterruptedException ignore) {
 						break;
 					}

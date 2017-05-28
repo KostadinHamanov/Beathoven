@@ -19,7 +19,7 @@ import javax.swing.*;
 //}
 
 public class LabelPanel extends JPanel {
-    protected JLabel lbl;
+    public static JLabel lbl;
 
     private Thread thread3;
 
@@ -27,12 +27,12 @@ public class LabelPanel extends JPanel {
 
     public LabelPanel() {
 
-        JLabel timeLabel = new JLabel();
-        timeLabel.setText("Time: ");
-        timeLabel.setVerticalAlignment(SwingConstants.BOTTOM);
-        timeLabel.setHorizontalAlignment(SwingConstants.LEFT);
+        lbl = new JLabel();
+        lbl.setText("Time: ");
+        lbl.setVerticalAlignment(SwingConstants.BOTTOM);
+        lbl.setHorizontalAlignment(SwingConstants.LEFT);
 
-        add(timeLabel);
+        add(lbl);
 //
 //        //TODO:fix
 //        ImageIcon leftButtonIcon = createImageIcon("images/right.gif");

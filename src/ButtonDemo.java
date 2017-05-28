@@ -116,6 +116,8 @@ public class ButtonDemo extends JPanel
             pausedAt = 0;
             System.out.println("Stopped: " + pausedAt);
 
+            LabelPanel.lbl.setText("Time: " + String.valueOf(Tone.sequencer.getMicrosecondPosition()));
+
             b2.setEnabled(true);
             b1.setEnabled(true);
             b3.setEnabled(false);
@@ -126,6 +128,8 @@ public class ButtonDemo extends JPanel
             b3.setEnabled(false);
 
             pausedAt = Tone.sequencer.getMicrosecondPosition();
+
+            LabelPanel.lbl.setText("Time: " + String.valueOf(Tone.sequencer.getMicrosecondPosition()));
             System.out.println(pausedAt);
 
             Tone.sequencer.stop();

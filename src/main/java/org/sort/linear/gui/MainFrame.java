@@ -7,6 +7,7 @@ import javax.swing.SwingUtilities;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
 
+@Path("/main")
 public class MainFrame {
 	private static final int WIDTH = 720;
 	private static final int HEIGHT = 480;

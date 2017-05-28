@@ -58,6 +58,7 @@ public class Tone {
                 try {
                     Thread.sleep(100); // Check every second
                     LabelPanel.lbl.setText("Time: " + String.valueOf(Tone.sequencer.getMicrosecondPosition()));
+                    MainFrame.progressBarPanel.progressBar.setValue(MainFrame.getLocation(Tone.sequencer.getMicrosecondPosition()));
                 } catch (InterruptedException ignore) {
                     break;
                 }

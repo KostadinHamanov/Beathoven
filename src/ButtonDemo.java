@@ -59,13 +59,13 @@ public class ButtonDemo extends JPanel
         b1 = new JButton("Start/Continue", leftButtonIcon);
         b1.setVerticalTextPosition(AbstractButton.CENTER);
         b1.setHorizontalTextPosition(AbstractButton.LEADING); //aka LEFT, for left-to-right locales
-        b1.setMnemonic(KeyEvent.VK_D);
+        b1.setMnemonic(KeyEvent.VK_S);
         b1.setActionCommand("start");
 
         b2 = new JButton("Stop", middleButtonIcon);
         b2.setVerticalTextPosition(AbstractButton.BOTTOM);
         b2.setHorizontalTextPosition(AbstractButton.CENTER);
-        b2.setMnemonic(KeyEvent.VK_M);
+        b2.setMnemonic(KeyEvent.VK_P);
         b2.setActionCommand("Stop");
 
         b3 = new JButton("Pause", rightButtonIcon);
@@ -119,6 +119,7 @@ public class ButtonDemo extends JPanel
             System.out.println("Stopped: " + pausedAt);
 
             LabelPanel.lbl.setText("Time: " + String.valueOf(pausedAt));
+            MainFrame.progressBarPanel.progressBar.setValue(MainFrame.getLocation(pausedAt));
 
             b2.setEnabled(true);
             b1.setEnabled(true);
@@ -132,6 +133,7 @@ public class ButtonDemo extends JPanel
             pausedAt = Tone.sequencer.getMicrosecondPosition();
 
             LabelPanel.lbl.setText("Time: " + String.valueOf(Tone.sequencer.getMicrosecondPosition()));
+            MainFrame.progressBarPanel.progressBar.setValue(MainFrame.getLocation(Tone.sequencer.getMicrosecondPosition()));
             System.out.println(pausedAt);
 
             Tone.sequencer.stop();

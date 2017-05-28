@@ -25,10 +25,11 @@ public class LabelPanel extends JPanel {
 
     private long pausedAt = 0;
 
+
     public LabelPanel() {
 
         lbl = new JLabel();
-        lbl.setText("Time: ");
+        lbl.setText("Time: 0");
         lbl.setVerticalAlignment(SwingConstants.BOTTOM);
         lbl.setHorizontalAlignment(SwingConstants.LEFT);
 

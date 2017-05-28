@@ -72,7 +72,10 @@ public class MainFrame extends JFrame {
     }
 
     public static void main(String[] args) {
-        Tone.load("/home/martin/Downloads/www.mid");
+//        Tone.load("/home/martin/Downloads/www.mid");
+//        Tone.load("midifile.mid");
+//        Tone.load("test1.mid");
+        Tone.load("file2.mid");
 
         //Schedule a job for the event-dispatching thread:
         //creating and showing this application's GUI.

@@ -23,6 +23,7 @@ public class Tone {
 		File midiFile = new File("/home/martin/Downloads/www.mid");
 		// Play once
 		try {
+
 			sequencer = MidiSystem.getSequencer();
 			sequencer.setSequence(MidiSystem.getSequence(midiFile));
 			sequencer.open();
@@ -31,7 +32,7 @@ public class Tone {
 			while (true) {
 				if (sequencer.isRunning()) {
 					try {
-						Thread.sleep(1000); // Check every second
+						Thread.sleep(100); // Check every second
 						LabelPanel.lbl.setText("Time: " + String.valueOf(Tone.sequencer.getMicrosecondPosition()));
 					} catch (InterruptedException ignore) {
 						break;

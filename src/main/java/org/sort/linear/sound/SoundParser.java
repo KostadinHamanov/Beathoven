@@ -14,9 +14,7 @@ import javax.swing.JToggleButton;
 
 public class SoundParser {
 
-	private static final int VELOCITY = 60;
-	// ,,,,>>!
-	private static final int NOTE_NUMBER = 60;
+	private static final int TIME_IN_MILISECONDS = 190;
 
 	public static void parse(final JToggleButton[][] buttons) throws MidiUnavailableException, InterruptedException {
 		Synthesizer synthesizer = MidiSystem.getSynthesizer();
@@ -38,7 +36,7 @@ public class SoundParser {
 				colChannels.get(k).programChange(24);
 				colChannels.get(k).noteOn(notes.get(k), 80);
 			}
-			Thread.sleep(190);
+			Thread.sleep(TIME_IN_MILISECONDS);
 			colChannels.clear();
 			notes.clear();
 			index = 0;

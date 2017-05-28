@@ -30,13 +30,13 @@ public class SoundParser {
 			for (int j = 0; j < buttons.length; j++) {
 				if (buttons[j][i].isSelected()) {
 					colChannels.add(channels[index]);
-					notes.put(index, 10 + j * 10);
+					notes.put(index, 30 + j);
 					index += 1;
 				}
 			}
 			for (int k = 0; k < colChannels.size(); k++) {
-				colChannels.get(k).programChange(3);
-				colChannels.get(k).noteOn(notes.get(k), 50);
+				colChannels.get(k).programChange(24);
+				colChannels.get(k).noteOn(notes.get(k), 80);
 			}
 			Thread.sleep(190);
 			colChannels.clear();

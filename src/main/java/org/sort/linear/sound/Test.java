@@ -15,14 +15,13 @@ public class Test {
 		
 		current.programChange(47);
 		current.noteOn(50,50);
-		Thread.sleep(10000);
 		
-		for(int i=0;i<400;i++) {
+		for(int i=18;i<400;i++) {
 			current.programChange(i);
 			System.out.println(current.getProgram());
 			
 			current.noteOn(50, 50);
-			Thread.sleep(500);
+			Thread.sleep(3000);
 			current.noteOff(50);
 		}
 

@@ -33,7 +33,7 @@ public class PlayerPiano {
      */
 
 //        args = new String[] {"-o", "file2.mid", "A B C D E F G +A s/32 D E C D E C /1-->>CEG"};
-        args = new String[] {"A B C D E F G +A s/32 D E C D E C /1-->>CEG"};
+//        args = new String[] {"A B C D E F G +A s/32 D E C D E C /1-->>CEG"};
 
         int instrument = 0;
         int tempo = 120;

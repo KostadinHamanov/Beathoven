@@ -11,11 +11,16 @@ import javax.sound.midi.MidiUnavailableException;
 import javax.sound.midi.Synthesizer;
 import javax.swing.JToggleButton;
 
+import jdk.nashorn.internal.parser.JSONParser;
+
 public class SoundParser {
 
 	private static final int TIME_IN_MILISECONDS = 190;
-
-	public static void parse(final JToggleButton[][] buttons) throws MidiUnavailableException, InterruptedException {
+//
+//	final JToggleButton[][] buttons
+	public static void parse() throws MidiUnavailableException, InterruptedException {
+		Map<String,Boolean[][]> map = org.sort.linear.gui.JSONParser.parse();
+		
 		Synthesizer synthesizer = MidiSystem.getSynthesizer();
 		synthesizer.open();
 		MidiChannel[] channels = synthesizer.getChannels();
@@ -41,6 +46,10 @@ public class SoundParser {
 			index = 0;
 
 		}
+	}
+
+	public static void main(String[] args) throws MidiUnavailableException, InterruptedException {
+		SoundParser.parse();
 	}
 
 }

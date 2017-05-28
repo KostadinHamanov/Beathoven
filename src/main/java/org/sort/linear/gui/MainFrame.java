@@ -19,7 +19,6 @@ public class MainFrame {
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setLocationRelativeTo(null);
 		setDefaultLookAndFeel(frame);
-		frame.setJMenuBar(MenuBarFactory.createMenu());
 		frame.add(new PadsPanel(), BorderLayout.CENTER);
 		frame.setVisible(true);
 		frame.requestFocus();

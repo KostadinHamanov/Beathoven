@@ -1,4 +1,4 @@
-/*
+package main.java.ui;/*
  * Copyright (c) 1995, 2008, Oracle and/or its affiliates. All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -29,6 +29,8 @@
  * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
+import main.java.Tone;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -36,7 +38,7 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
 /* 
- * ButtonDemo.java requires the following files:
+ * main.java.UIin.java.ButtonDemo.java requires the following files:
  *   images/right.gif
  *   images/middle.gif
  *   images/left.gif
@@ -111,9 +113,9 @@ public class ProgressBar extends JPanel
 //                // We are doing the same thing as with the MyRunnableImplementation class
 ////                for (int i = 0; i < 5; i++) {
 //                long start = System.nanoTime();
-////                Tone.main(new String[]{String.valueOf(pausedAt)});
+////                main.java.Tone.main(new String[]{String.valueOf(pausedAt)});
 //
-//                Tone.play(pausedAt);
+//                main.java.Tone.play(pausedAt);
 //
 //                System.out.println(TimeUnit.SECONDS.convert(System.nanoTime() - start, TimeUnit.NANOSECONDS));
 //
@@ -128,8 +130,8 @@ public class ProgressBar extends JPanel
 //            pausedAt = 0;
 //            System.out.println("Stopped: " + pausedAt);
 //
-//            LabelPanel.lbl.setText("Time: " + String.valueOf(pausedAt));
-//            MainFrame.progressBar.setValue(MainFrame.getLocation(pausedAt));
+//            main.java.UIin.java.LabelPanel.lbl.setText("Time: " + String.valueOf(pausedAt));
+//            main.java.UIin.java.MainFrame.progressBar.setValue(main.java.UIin.java.MainFrame.getLocation(pausedAt));
 //
 //            b2.setEnabled(true);
 //            b1.setEnabled(true);
@@ -140,13 +142,13 @@ public class ProgressBar extends JPanel
 //            b1.setEnabled(true);
 //            b3.setEnabled(false);
 //
-//            pausedAt = Tone.sequencer.getMicrosecondPosition();
+//            pausedAt = main.java.Tone.sequencer.getMicrosecondPosition();
 //
-//            LabelPanel.lbl.setText("Time: " + String.valueOf(Tone.sequencer.getMicrosecondPosition()));
-//            MainFrame.progressBar.setValue(MainFrame.getLocation(Tone.sequencer.getMicrosecondPosition()));
+//            main.java.LabelPanelLabelPanel.lbl.setText("Time: " + String.valueOf(main.java.Tone.sequencer.getMicrosecondPosition()));
+//            main.java.UIin.java.MainFrame.progressBar.setValue(main.java.ui.MainFrame.MainFrame.getLocation(main.java.Tone.sequencer.getMicrosecondPosition()));
 //            System.out.println(pausedAt);
 //
-//            Tone.sequencer.stop();
+//            main.java.Tone.sequencer.stop();
 ////            thread3.interrupt();
 //        }
     }

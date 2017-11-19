@@ -1,4 +1,4 @@
-/*
+package main.java.ui;/*
  * Copyright (c) 1995, 2008, Oracle and/or its affiliates. All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -29,13 +29,15 @@
  * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
+import main.java.Tone;
+
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 
 /* 
- * ButtonDemo.java requires the following files:
+ * main.java.ButtonDemoButtonDemo.java requires the following files:
  *   images/right.gif
  *   images/middle.gif
  *   images/left.gif
@@ -100,7 +102,7 @@ public class ButtonDemo extends JPanel
                 // We are doing the same thing as with the MyRunnableImplementation class
 //                for (int i = 0; i < 5; i++) {
                 long start = System.nanoTime();
-//                Tone.main(new String[]{String.valueOf(pausedAt)});
+//                main.java.Tone.main(new String[]{String.valueOf(pausedAt)});
 
                 Tone.play(pausedAt);
 

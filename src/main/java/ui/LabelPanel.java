@@ -1,12 +1,14 @@
+package main.java.ui;
+
 import javax.swing.*;
 
 /**
  * Created by martin on 27.05.17.
  */
-//public class LabelPanel extends JPanel {
+//public class main.java.LabelPanelLabelPanel extends JPanel {
 //
 //
-//    public LabelPanel() {
+//    public main.java.UIin.java.LabelPanel() {
 //        JLabel timeLabel = new JLabel();
 //        timeLabel.setText("Time: ");
 //        timeLabel.setVerticalAlignment(SwingConstants.BOTTOM);
@@ -85,7 +87,7 @@ public class LabelPanel extends JPanel {
 //                // We are doing the same thing as with the MyRunnableImplementation class
 ////                for (int i = 0; i < 5; i++) {
 //                long start = System.nanoTime();
-//                Tone.main(new String[]{String.valueOf(pausedAt)});
+//                main.java.Tone.main(new String[]{String.valueOf(pausedAt)});
 //
 //                System.out.println(TimeUnit.SECONDS.convert(System.nanoTime() - start, TimeUnit.NANOSECONDS));
 //
@@ -109,10 +111,10 @@ public class LabelPanel extends JPanel {
 //            b1.setEnabled(true);
 //            b3.setEnabled(false);
 //
-//            pausedAt = Tone.sequencer.getMicrosecondPosition();
+//            pausedAt = main.java.Tone.sequencer.getMicrosecondPosition();
 //            System.out.println(pausedAt);
 //
-//            Tone.sequencer.stop();
+//            main.java.Tone.sequencer.stop();
 ////            thread3.interrupt();
 //        }
 //    }

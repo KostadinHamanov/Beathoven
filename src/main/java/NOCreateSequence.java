@@ -1,4 +1,4 @@
-/*
+package main.java;/*
  *	CreateSequence.java
  *
  *	This file is part of jsresources.org
@@ -41,7 +41,7 @@ import java.io.File;
 import java.io.IOException;
 
 
-/**	<titleabbrev>CreateSequence</titleabbrev>
+/**	<titleabbrev>main.java.NOCreateSequence</titleabbrev>
  <title>Creating a Sequence</title>
 
  <formalpara><title>Purpose</title>
@@ -53,7 +53,7 @@ import java.io.IOException;
  <formalpara><title>Usage</title>
  <para>
  <cmdsynopsis>
- <command>java CreateSequence</command>
+ <command>java main.java.NOCreateSequence</command>
  <arg choice="plain"><replaceable class="parameter">midi_file</replaceable></arg>
  </cmdsynopsis>
  </para>
@@ -75,12 +75,12 @@ import java.io.IOException;
 
  <formalpara><title>Source code</title>
  <para>
- <ulink url="CreateSequence.java.html">CreateSequence.java</ulink>
+ <ulink url="main.java.NOCreateSequence.java.html">main.java.NOCreateSequence.java</ulink>
  </para>
  </formalpara>
 
  */
-public class CreateSequence
+public class NOCreateSequence
 {
     /*	This velocity is used for all notes.
      */
@@ -225,7 +225,7 @@ public class CreateSequence
     private static void printUsageAndExit()
     {
         out("usage:");
-        out("java CreateSequence <midifile>");
+        out("java main.java.NOCreateSequence <midifile>");
         System.exit(1);
     }
 
@@ -238,4 +238,4 @@ public class CreateSequence
 
 
 
-/*** CreateSequence.java ***/
+/*** main.java.NOCreateSequence.java ***/

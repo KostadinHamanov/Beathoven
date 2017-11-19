@@ -1,3 +1,5 @@
+package main.java;
+
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
@@ -24,7 +26,7 @@ public class GsonExample {
         Type typeOfHashMap = new TypeToken<Map<String, boolean[][]>>() {
         }.getType();
 
-        String json2 = "{\"black\":[\n" +
+        String json2 = "{\"yellow\":[\n" +
                 "[false,false,false,false,false,false,false,false,false,false,false,false,false,false,false],\n" +
                 "[false,false,false,false,false,false,false,false,false,false,false,false,false,false,false],\n" +
                 "[false,false,false,false,false,false,false,false,false,false,false,false,false,false,false],\n" +
@@ -32,7 +34,7 @@ public class GsonExample {
                 "[false,false,false,false,false,false,false,false,false,false,false,false,false,false,false],\n" +
                 "[false,false,false,false,false,false,false,false,false,false,false,false,false,false,false]\n" +
                 "],\n" +
-                "\"yellow\":[\n" +
+                "\"black\":[\n" +
                 "[false,false,false,false,false,false,false,false,false,false,false,false,false,false,false],\n" +
                 "[false,true,true,true,true,true,true,true,true,false,false,false,false,false,false],\n" +
                 "[true,true,true,true,true,true,true,true,true,false,false,false,false,false,false],\n" +
@@ -55,24 +57,25 @@ public class GsonExample {
 
         String[] notes = {"A", "B", "C", "D", "E", "F", "G"};
 //        boolean[][] notes =
-        for (boolean[][] notesAll : newMap.values()) {
-            System.out.println("new");
-            for (int noteIndexOut = 0; noteIndexOut < notesAll[0].length; noteIndexOut++) {
-                for (int noteIndex = 0; noteIndex < notesAll.length; noteIndex++) {
-                    boolean print = notesAll[noteIndex][noteIndexOut];
+        boolean[][] notesAll = newMap.get("black");
+//        for (boolean[][] notesAll : newMap.values()) {
+        System.out.println("new");
+        for (int noteIndexOut = 0; noteIndexOut < notesAll[0].length; noteIndexOut++) {
+            for (int noteIndex = 0; noteIndex < notesAll.length; noteIndex++) {
+                boolean print = notesAll[noteIndex][noteIndexOut];
 //                    System.out.println(notesAll[noteIndex][noteIndexOut] + " " + noteIndex + " " + noteIndexOut);
-                    if (print) {
+                if (print) {
 //                        System.out.println(notes[noteIndex]);
-                        toBePlayed.append(notes[noteIndex]);
-                    }
+                    toBePlayed.append(notes[noteIndex]);
                 }
-//                System.out.println();
-                toBePlayed.append(" ");
             }
+//                System.out.println();
+            toBePlayed.append(" ");
         }
+//        }
         System.out.println(toBePlayed);
 
-        PlayerPiano.main(new String[]{"-i", "115", toBePlayed.toString()});
+        PlayerPiano.main(new String[]{"-i", "123", toBePlayed.toString()});
     }
 
 }

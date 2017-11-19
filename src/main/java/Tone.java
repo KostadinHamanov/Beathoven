@@ -1,3 +1,8 @@
+package main.java;
+
+import main.java.ui.LabelPanel;
+import main.java.ui.MainFrame;
+
 import javax.sound.midi.InvalidMidiDataException;
 import javax.sound.midi.MidiSystem;
 import javax.sound.midi.MidiUnavailableException;

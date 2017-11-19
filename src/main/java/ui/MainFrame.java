@@ -1,3 +1,7 @@
+package main.java.ui;
+
+import main.java.Tone;
+
 import javax.swing.*;
 import java.awt.*;
 
@@ -21,10 +25,10 @@ public class MainFrame extends JFrame {
     private static void createAndShowGUI() {
 
         //Create and set up the window.
-//        JFrame frame = new JFrame("ButtonDemo");
+//        JFrame frame = new JFrame("main.java.ButtonDemoButtonDemo");
 //        frame.setLayout(new GridLayout(2,3));
 //        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-    	JFrame frame = new JFrame("MainFrame");
+    	JFrame frame = new JFrame("main.java.UIin.java.MainFrame");
 //	    frame.setLayout(new GridLayout(2,3));
 	    frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
@@ -53,7 +57,7 @@ public class MainFrame extends JFrame {
         progressBarPanel = new ProgressBar();
 
 
-//        progressBar = new JProgressBar(0, getLocation(Tone.sequencer.getMicrosecondLength()));
+//        progressBar = new JProgressBar(0, getLocation(main.java.Tone.sequencer.getMicrosecondLength()));
 //        progressBar.setValue(getLocation(0));
 //        progressBar.setStringPainted(true);
 //
@@ -72,9 +76,9 @@ public class MainFrame extends JFrame {
     }
 
     public static void main(String[] args) {
-//        Tone.load("/home/martin/Downloads/www.mid");
-//        Tone.load("midifile.mid");
-//        Tone.load("test1.mid");
+//        main.java.Tone.load("/home/martin/Downloads/www.mid");
+//        main.java.Tone.load("midifile.mid");
+//        main.java.Tone.load("test1.mid");
         Tone.load("file2.mid");
 
         //Schedule a job for the event-dispatching thread:
